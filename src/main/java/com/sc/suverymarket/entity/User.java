@@ -21,19 +21,19 @@ public class User {
     @Id
     @Column(name = "user_id")
     @GeneratedValue(strategy = IDENTITY)
-    Long id;
+    private Long id;
 
     @Column(nullable = false, length = 20)
-    String nickname;
+    private String nickname;
 
     @Column(nullable = false, length = 83)
-    String email;
+    private String email;
 
     @Column(nullable = false, length = 13)
-    String phoneNumber;
+    private String phoneNumber;
 
     @Column(nullable = false)
-    String socialId;
+    private String socialId;
 
     @CreatedDate // Insert
     @Column(updatable = false, nullable = false)
