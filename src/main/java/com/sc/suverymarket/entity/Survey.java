@@ -28,6 +28,7 @@ public class Survey {
     @ManyToOne(fetch = LAZY)
     private User user;
 
+    @Column(nullable = false, length = 100)
     private String title;
 
     @CreatedDate // Insert

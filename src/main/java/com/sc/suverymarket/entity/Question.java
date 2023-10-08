@@ -9,6 +9,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import static jakarta.persistence.EnumType.STRING;
 import static jakarta.persistence.FetchType.LAZY;
@@ -32,8 +33,8 @@ public class Question {
     @Column(nullable = false, length = 100)
     private String header;
 
-    @Column(nullable = false, length = 100)
-    private String body;
+    @Column
+    private List<String> body;
 
     @Column(nullable = false, updatable = false)
     @Enumerated(value = STRING)
@@ -68,7 +69,7 @@ public class Question {
     }
 
     @Builder
-    public Question(Long id, Survey survey, String header, String body, Type type, LocalDateTime createdAt, LocalDateTime modifiedAt) {
+    public Question(Long id, Survey survey, String header, List<String> body, Type type, LocalDateTime createdAt, LocalDateTime modifiedAt) {
         this.id = id;
         this.survey = survey;
         this.header = header;
