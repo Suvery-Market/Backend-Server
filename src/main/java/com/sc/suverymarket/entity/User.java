@@ -16,6 +16,7 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 @Getter
 @EntityListeners(AuditingEntityListener.class)
 @NoArgsConstructor
+@Table(name = "Users")
 public class User {
 
     @Id
@@ -35,22 +36,20 @@ public class User {
     @Column(nullable = false)
     private String socialId;
 
-    @CreatedDate // Insert
+    @CreatedDate
     @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;
 
-    @LastModifiedDate // Insert or Update
+    @LastModifiedDate
     @Column(nullable = false)
     private LocalDateTime modifiedAt;
 
     @Builder
-    public User(Long id, String nickname, String email, String phoneNumber, String socialId, LocalDateTime createdAt, LocalDateTime modifiedAt) {
+    public User(Long id, String nickname, String email, String phoneNumber, String socialId) {
         this.id = id;
         this.nickname = nickname;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.socialId = socialId;
-        this.createdAt = createdAt;
-        this.modifiedAt = modifiedAt;
     }
 }
