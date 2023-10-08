@@ -1,6 +1,7 @@
 package com.sc.suverymarket.entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
@@ -17,6 +18,7 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 @Getter
 @EntityListeners(AuditingEntityListener.class)
 @NoArgsConstructor
+@Table(name = "Questions")
 public class Question {
 
     @Id
@@ -65,4 +67,14 @@ public class Question {
         }
     }
 
+    @Builder
+    public Question(Long id, Survey survey, String header, String body, Type type, LocalDateTime createdAt, LocalDateTime modifiedAt) {
+        this.id = id;
+        this.survey = survey;
+        this.header = header;
+        this.body = body;
+        this.type = type;
+        this.createdAt = createdAt;
+        this.modifiedAt = modifiedAt;
+    }
 }
