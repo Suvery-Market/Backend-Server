@@ -14,6 +14,7 @@ spring:
         format_sql: true
         default_batch_fetch_size: 100  # 100개를 한번에 query 발사!
 
+
 logging:
   level:
     org.hibernate.SQL: debug
