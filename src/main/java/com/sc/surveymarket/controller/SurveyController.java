@@ -18,13 +18,30 @@ public class SurveyController {
 
     @PostMapping
     public ResponseEntity register(@Valid @RequestBody SurveyRegisterReqDto surveyRegisterReqDto) {
-
         SurveyResDto surveyResDto = surveyService.register(surveyRegisterReqDto);
-
         return ResponseEntity.ok(ResponseDto.builder()
                 .code(1)
                 .message("Success")
                 .data(surveyResDto)
+                .build());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity retrieve(@PathVariable String id) {
+        SurveyResDto surveyResDto = surveyService.retrieve(id);
+        return ResponseEntity.ok(ResponseDto.builder()
+                .code(1)
+                .message("Success")
+                .data(surveyResDto)
+                .build());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity delete(@PathVariable String id) {
+        surveyService.delete(id);
+        return ResponseEntity.ok(ResponseDto.builder()
+                .code(1)
+                .message("Success")
                 .build());
     }
 
