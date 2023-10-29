@@ -1,4 +1,4 @@
-package com.sc.suverymarket.document.question;
+package com.sc.surveymarket.document.question;
 
 enum QuestionType {
     SHORT_ANSWER("단답형"),

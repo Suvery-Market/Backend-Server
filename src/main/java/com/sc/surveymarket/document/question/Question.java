@@ -1,4 +1,4 @@
-package com.sc.suverymarket.document.question;
+package com.sc.surveymarket.document.question;
 
 import lombok.Builder;
 import lombok.Data;

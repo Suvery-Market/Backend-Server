@@ -1,9 +1,9 @@
-package com.sc.suverymarket.dto.survey;
+package com.sc.surveymarket.dto.survey;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.sc.suverymarket.document.Survey;
-import com.sc.suverymarket.document.question.Question;
-import com.sc.suverymarket.dto.user.UserResDto;
+import com.sc.surveymarket.document.Survey;
+import com.sc.surveymarket.document.question.Question;
+import com.sc.surveymarket.dto.user.UserResDto;
 import lombok.*;
 
 import java.util.List;

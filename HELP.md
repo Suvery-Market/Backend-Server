@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'com.sc.suvery-market' is invalid and this project uses 'com.sc.suverymarket' instead.
+* The original package name 'com.sc.suvery-market' is invalid and this project uses 'com.sc.surveymarket' instead.
 
 # Getting Started
 

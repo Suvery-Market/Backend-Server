@@ -1,4 +1,4 @@
-package com.sc.suverymarket.dto;
+package com.sc.surveymarket.dto;
 
 import lombok.*;
 

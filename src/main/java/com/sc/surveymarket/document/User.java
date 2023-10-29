@@ -1,6 +1,5 @@
-package com.sc.suverymarket.document;
+package com.sc.surveymarket.document;
 
-import com.sc.suverymarket.document.question.Question;
 import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
@@ -10,34 +9,36 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Document
 @Getter
 @NoArgsConstructor
-public class Survey {
+public class User {
 
     @Id
-    @Column(name = "survey_id")
+    @Column(name = "user_id")
     @GeneratedValue(strategy = IDENTITY)
     private String id;
 
+    @Column(nullable = false, length = 20)
+    private String nickname;
+
+    @Column(nullable = false, length = 83)
+    private String email;
+
+    @Column(nullable = false, length = 13)
+    private String phoneNumber;
+
     @Column(nullable = false)
-    private User user;
+    private String socialId;
 
-    @Column(nullable = false, length = 100)
-    private String title;
-
-    @Column(nullable = false)
-    private List<Question> questionList;
-
-    @CreatedDate // Insert
+    @CreatedDate
     @Column(updatable = false, nullable = false)
     private LocalDateTime createdAt;
 
-    @LastModifiedDate // Insert or Update
+    @LastModifiedDate
     @Column(nullable = false)
     private LocalDateTime modifiedAt;
 
@@ -45,9 +46,11 @@ public class Survey {
     private Integer version;
 
     @Builder
-    public Survey(User user, String title, List<Question> questionList) {
-        this.user = user;
-        this.title = title;
-        this.questionList = questionList;
+    public User(String id, String nickname, String email, String phoneNumber, String socialId) {
+        this.id = id;
+        this.nickname = nickname;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.socialId = socialId;
     }
 }

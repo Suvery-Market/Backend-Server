@@ -1,6 +1,6 @@
-package com.sc.suverymarket.controller;
+package com.sc.surveymarket.controller;
 
-import com.sc.suverymarket.dto.ResponseDto;
+import com.sc.surveymarket.dto.ResponseDto;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

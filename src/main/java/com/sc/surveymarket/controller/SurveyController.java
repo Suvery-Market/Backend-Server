@@ -1,9 +1,9 @@
-package com.sc.suverymarket.controller;
+package com.sc.surveymarket.controller;
 
-import com.sc.suverymarket.dto.ResponseDto;
-import com.sc.suverymarket.dto.survey.SurveyRegisterReqDto;
-import com.sc.suverymarket.dto.survey.SurveyResDto;
-import com.sc.suverymarket.service.SurveyService;
+import com.sc.surveymarket.dto.ResponseDto;
+import com.sc.surveymarket.dto.survey.SurveyRegisterReqDto;
+import com.sc.surveymarket.dto.survey.SurveyResDto;
+import com.sc.surveymarket.service.SurveyService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;

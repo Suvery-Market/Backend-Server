@@ -1,9 +1,9 @@
-package com.sc.suverymarket.service;
+package com.sc.surveymarket.service;
 
-import com.sc.suverymarket.document.Survey;
-import com.sc.suverymarket.dto.survey.SurveyRegisterReqDto;
-import com.sc.suverymarket.dto.survey.SurveyResDto;
-import com.sc.suverymarket.repository.SurveyRepository;
+import com.sc.surveymarket.document.Survey;
+import com.sc.surveymarket.dto.survey.SurveyRegisterReqDto;
+import com.sc.surveymarket.dto.survey.SurveyResDto;
+import com.sc.surveymarket.repository.SurveyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

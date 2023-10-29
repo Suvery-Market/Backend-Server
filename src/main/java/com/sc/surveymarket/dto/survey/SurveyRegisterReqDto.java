@@ -1,6 +1,6 @@
-package com.sc.suverymarket.dto.survey;
+package com.sc.surveymarket.dto.survey;
 
-import com.sc.suverymarket.document.question.Question;
+import com.sc.surveymarket.document.question.Question;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.Data;

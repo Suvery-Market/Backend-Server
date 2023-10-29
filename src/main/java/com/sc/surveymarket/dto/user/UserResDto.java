@@ -1,6 +1,6 @@
-package com.sc.suverymarket.dto.user;
+package com.sc.surveymarket.dto.user;
 
-import com.sc.suverymarket.document.User;
+import com.sc.surveymarket.document.User;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
