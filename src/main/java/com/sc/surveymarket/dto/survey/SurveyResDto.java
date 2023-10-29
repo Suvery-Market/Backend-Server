@@ -31,7 +31,6 @@ public class SurveyResDto {
         return SurveyResDto.builder()
                 .id(survey.getId())
                 .title(survey.getTitle())
-                .questionList(survey.getQuestionList())
                 .build();
     }
 }
