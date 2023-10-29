@@ -1,11 +1,12 @@
-package com.sc.suverymarket.dto.survey;
+package com.sc.surveymarket.dto.survey;
 
-import com.sc.suverymarket.dto.question.QuestionRegisterReqDto;
+import com.sc.surveymarket.document.question.Question;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -13,10 +14,9 @@ import java.util.List;
 public class SurveyRegisterReqDto {
 
     @NotEmpty
-    @Size(min = 5, max = 100)
+    @Size(min = 1, max = 40)
     private String title;
 
     @NotEmpty
-    private List<QuestionRegisterReqDto> questionRegisterReqDtoList;
-
+    private List<Question> questionList = new ArrayList<>();
 }

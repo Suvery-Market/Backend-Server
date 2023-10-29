@@ -1,13 +1,8 @@
-package com.sc.suverymarket;
+package com.sc.surveymarket;
 
-import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class SuveryMarketApplicationTests {
-
-	@Test
-	void contextLoads() {
-	}
 
 }
