@@ -1,4 +1,4 @@
-package com.sc.suverymarket.entity;
+package com.sc.suverymarket.document;
 
 import jakarta.persistence.*;
 import lombok.Builder;
@@ -7,22 +7,21 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
-@Entity
+@Document
 @Getter
-@EntityListeners(AuditingEntityListener.class)
 @NoArgsConstructor
-@Table(name = "Users")
 public class User {
 
     @Id
     @Column(name = "user_id")
     @GeneratedValue(strategy = IDENTITY)
-    private Long id;
+    private String id;
 
     @Column(nullable = false, length = 20)
     private String nickname;
@@ -44,8 +43,11 @@ public class User {
     @Column(nullable = false)
     private LocalDateTime modifiedAt;
 
+    @Version
+    private Integer version;
+
     @Builder
-    public User(Long id, String nickname, String email, String phoneNumber, String socialId) {
+    public User(String id, String nickname, String email, String phoneNumber, String socialId) {
         this.id = id;
         this.nickname = nickname;
         this.email = email;

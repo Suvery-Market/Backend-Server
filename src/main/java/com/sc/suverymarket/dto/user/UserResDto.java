@@ -1,6 +1,6 @@
 package com.sc.suverymarket.dto.user;
 
-import com.sc.suverymarket.entity.User;
+import com.sc.suverymarket.document.User;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,13 +9,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserResDto {
 
-    private Long id;
+    private String id;
     private String nickname;
     private String email;
     private String phoneNumber;
 
     @Builder
-    public UserResDto(Long id, String nickname, String email, String phoneNumber) {
+    public UserResDto(String id, String nickname, String email, String phoneNumber) {
         this.id = id;
         this.nickname = nickname;
         this.email = email;

@@ -1,27 +1,37 @@
 package com.sc.suverymarket.dto.survey;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.sc.suverymarket.document.Survey;
+import com.sc.suverymarket.document.question.Question;
 import com.sc.suverymarket.dto.user.UserResDto;
-import com.sc.suverymarket.entity.Survey;
 import lombok.*;
 
-@Getter
+import java.util.List;
+
+import static com.fasterxml.jackson.annotation.JsonInclude.Include.NON_NULL;
+
+@Data
+@NoArgsConstructor
+@JsonInclude(NON_NULL)
 public class SurveyResDto {
-    private Long id;
+    private String id;
     private String title;
     private UserResDto userResDto;
+    private List<Question> questionList;
 
     @Builder
-    public SurveyResDto(Long id, String title, UserResDto userResDto) {
+    public SurveyResDto(String id, String title, UserResDto userResDto, List<Question> questionList) {
         this.id = id;
         this.title = title;
         this.userResDto = userResDto;
+        this.questionList = questionList;
     }
 
     public static SurveyResDto create(Survey survey) {
         return SurveyResDto.builder()
                 .id(survey.getId())
                 .title(survey.getTitle())
-                .userResDto(UserResDto.create(survey.getUser()))
+                .questionList(survey.getQuestionList())
                 .build();
     }
 }

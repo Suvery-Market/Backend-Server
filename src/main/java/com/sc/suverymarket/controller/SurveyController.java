@@ -17,15 +17,15 @@ public class SurveyController {
     private final SurveyService surveyService;
 
     @PostMapping
-    public ResponseEntity register(@RequestBody @Valid SurveyRegisterReqDto surveyRegisterReqDto) {
+    public ResponseEntity register(@Valid @RequestBody SurveyRegisterReqDto surveyRegisterReqDto) {
 
         SurveyResDto surveyResDto = surveyService.register(surveyRegisterReqDto);
 
-        return ResponseEntity
-                .ok(ResponseDto.builder()
-                        .code(1)
-                        .message("Success")
-                        .data(surveyResDto));
+        return ResponseEntity.ok(ResponseDto.builder()
+                .code(1)
+                .message("Success")
+                .data(surveyResDto)
+                .build());
     }
 
 }
